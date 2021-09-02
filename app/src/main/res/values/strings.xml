@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">zavrsni</string>
+    <string name="title">title</string>
+    <string name="description">description</string>
+    <string name="add_task">add task</string>
+    <string name="monday">MONDAY</string>
+    <string name="hint_date">27/07/2021</string>
+    <string name="notification">notification</string>
+</resources>
