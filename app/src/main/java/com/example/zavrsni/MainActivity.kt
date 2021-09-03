@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         clearAllDays()
         setDays()
+        
 
         bottom_navigation.setOnItemReselectedListener {
             when(it.itemId){

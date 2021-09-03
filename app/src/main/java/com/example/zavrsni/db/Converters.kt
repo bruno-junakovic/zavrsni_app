@@ -18,6 +18,6 @@ class Converters {
     @TypeConverter
     fun toLocalDate(string: String) : LocalDate{
 
-        return LocalDate.parse(string.trim(), DateTimeFormatter.ofPattern("yyyy-MM-d"))
+        return LocalDate.parse(string.trim(), DateTimeFormatter.ofPattern("yyyy-MM-dd"))
     }
 }

@@ -63,7 +63,7 @@ class DayAdapter(tasks : MutableList<Task> ) : RecyclerView.Adapter<DayAdapter.T
         fun onBind(task : Task){
 
             when (task.priority) {
-                1 -> {
+                0 -> {
                     itemView.tvTaskTitleRed.text = task.title
                     itemView.ivDeleteRed.setOnClickListener {
                         GlobalScope.launch {
@@ -71,7 +71,7 @@ class DayAdapter(tasks : MutableList<Task> ) : RecyclerView.Adapter<DayAdapter.T
                         }
                     }
                 }
-                2 -> {
+                1 -> {
                     itemView.tvTaskTitleYellow.text = task.title
                     itemView.ivDeleteYellow.setOnClickListener {
                         GlobalScope.launch {
