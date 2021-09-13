@@ -1,4 +1,4 @@
-package com.example.zavrsni.fragments
+package com.example.zavrsni.common.base
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,14 +9,14 @@ import kotlin.coroutines.CoroutineContext
 
 open class BaseFragment : Fragment(), CoroutineScope {
 
-    private lateinit var job : Job
+    private lateinit var job: Job
 
     override val coroutineContext: CoroutineContext
         get() = job + Dispatchers.Main
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        job= Job()
+        job = Job()
     }
 
     override fun onDestroy() {

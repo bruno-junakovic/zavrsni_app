@@ -1,81 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey_backgorund">
+    android:fillViewport="true">
 
-    <EditText
-        android:id="@+id/etTitle"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_centerInParent="true"
-        android:layout_marginHorizontal="15dp"
-        android:hint="@string/title"/>
-
-    <TextView
-        android:id="@+id/etDescription"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_below="@+id/etTitle"
-        android:layout_marginHorizontal="15dp"
-        android:hint="@string/description" />
-
-    <EditText
-        android:id="@+id/etDate"
-        android:hint="@string/hint_date"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:inputType="datetime"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
-
-    <Button
-        android:id="@+id/buAddTask"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:text="@string/add_task" />
-
-    <RadioGroup
-        android:id="@+id/rbGroup"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@+id/etDate"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15pt">
-        <RadioButton
-            android:id="@+id/rbGreen"
+        android:background="@color/grey_backgorund">
+
+        <EditText
+            android:id="@+id/etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:hint="@string/title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sbNotification" />
+
+        <EditText
+            android:id="@+id/etDescription"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/etTitle"
+            android:layout_margin="20dp"
+            android:layout_marginHorizontal="15dp"
+            android:hint="@string/description"
+            android:lines="20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etTitle" />
+
+        <EditText
+            android:id="@+id/etDate"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:focusable="false"
+            android:gravity="center"
+            android:hint="@string/hint_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnAddTask"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/add_task"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etDescription" />
+
+        <RadioGroup
+            android:id="@+id/rbGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="@color/green"
-            android:checked="true"/>
-        <RadioButton
-            android:id="@+id/rbYellow"
+            android:layout_below="@+id/etDate"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:layout_marginTop="15pt"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etDate">
+
+            <RadioButton
+                android:id="@+id/rbGreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/green"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/rbYellow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/yellow" />
+
+            <RadioButton
+                android:id="@+id/rbRed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/red" />
+
+        </RadioGroup>
+
+        <Switch
+            android:id="@+id/sbNotification"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="@color/yellow"/>
-        <RadioButton
-            android:id="@+id/rbRed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:buttonTint="@color/red"/>
+            android:layout_below="@id/rbGroup"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:layout_marginTop="15pt"
+            android:text="@string/notification"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rbGroup"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
 
-    </RadioGroup>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Switch
-        android:id="@+id/sbNotification"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:ignore="UseSwitchCompatOrMaterialXml"
-        android:text="@string/notification"
-        android:layout_below="@id/rbGroup"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15pt"/>
-
-</RelativeLayout>
+</ScrollView>

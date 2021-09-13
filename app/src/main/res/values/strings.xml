@@ -6,4 +6,16 @@
     <string name="monday">MONDAY</string>
     <string name="hint_date">27/07/2021</string>
     <string name="notification">notification</string>
+
+    <string name="pick_task_date">Pick task date</string>
+    <string name="pick_tasks_date">Pick tasks date</string>
+    <string name="date_required">date required</string>
+    <string name="title_required">title required</string>
+    <string name="description_required">description required</string>
+    <string name="home">Home</string>
+    <string name="tasks">Tasks</string>
+    <string name="important_tasks_message"> %1s important tasks for today </string>
+    <string name="ok"> OK </string>
+    <string name="show_task_description"> Show task description </string>
+    <string name="delete_task"> Delete task </string>
 </resources>
